@@ -26,9 +26,9 @@
     footer { background: #1a252f; color: #fff; padding: 20px 0; text-align: center; font-size: 14px; }
     
     /* Стили для цветных кнопок соцсетей */
-    .social-link-btn { display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 5px; color: white; text-decoration: none; font-weight: bold; margin-right: 10px; margin-bottom: 10px; transition: 0.2s; }
+    .social-link-btn { display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 5px; color: white; text-decoration: none; font-weight: bold; margin-right: 10px; margin-bottom: 10px; transition: 0.2s; cursor: pointer; }
     .social-link-btn i { margin-right: 8px; font-size: 18px; }
-    .btn-wa { background: #25d366; }
+    .btn-wa { background: #25d366; border: none; }
     .btn-wa:hover { background: #20ba5a; color: white; }
     .btn-tg { background: #0088cc; }
     .btn-tg:hover { background: #0077b3; color: white; }
@@ -121,17 +121,15 @@
           <div class="mt-4">
             <p class="fw-bold mb-2">Мы в соцсетях и мессенджерах:</p>
             
-            <!-- Мобильная и ПК ссылка для перехода в чат WhatsApp -->
-            <a href="https://whatsapp.com" target="_blank" class="social-link-btn btn-wa">
+            <!-- Умная кнопка WhatsApp, которая принудительно открывает приложение на смартфонах -->
+            <button onclick="openWhatsApp()" class="social-link-btn btn-wa">
               <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
+            </button>
             
-            <!-- Ссылка для перехода в чат Telegram -->
             <a href="https://t.me" target="_blank" class="social-link-btn btn-tg">
               <i class="fab fa-telegram-plane"></i> Telegram
             </a>
             
-            <!-- Ссылка на ваш Instagram аккаунт -->
             <a href="https://instagram.com" target="_blank" class="social-link-btn btn-insta">
               <i class="fab fa-instagram"></i> Instagram
             </a>
@@ -149,12 +147,24 @@
   </footer>
 
   <script>
+    // Скрипт для безошибочного открытия чата WhatsApp на любых устройствах
+    function openWhatsApp() {
+      var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      if (isMobile) {
+        // Принудительный вызов мобильного приложения
+        window.location.href = "whatsapp://send?phone=996507270720";
+      } else {
+        // Стандартная ссылка для открытия на компьютерах
+        window.open("https://whatsapp.com", "_blank");
+      }
+    }
+
+    // Скрипт для обработки формы Google Таблиц
     document.getElementById('leadForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const form = this;
       const status = document.getElementById('formStatus');
       
-      // Восстановлена ваша рабочая ссылка Версии 2 для Google Таблиц
       const webAppUrl = 'https://google.com';
       
       fetch(webAppUrl, {
