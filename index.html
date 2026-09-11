@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Тут пишем ваше название бренда -->
+  <title>МОЙ БРЕНД | Видеонаблюдение, Пожарная безопасность, СКУД в Бишкеке</title>
+  
+  <!-- Подключаем красивые стили, чтобы сайт выглядел современно -->
+  <link rel="stylesheet" href="https://cloudflare.com">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; background-color: #ffffff; }
+    .header-top { background: #1a252f; color: #fff; padding: 10px 0; font-size: 14px; }
+    .navbar-brand { font-weight: bold; color: #ff5722 !important; font-size: 24px; }
+    .hero-section { 
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/banner-bg.jpg') center/cover no-repeat; 
+      color: white; padding: 100px 0; text-align: center;
+    }
+    .btn-orange { background: #ff5722; color: white; border: none; padding: 10px 25px; font-weight: bold; }
+    .btn-orange:hover { background: #e64a19; color: white; }
+    .service-card { border: 1px solid #ddd; padding: 25px; border-radius: 8px; text-align: center; transition: 0.3s; background: #fff; }
+    .service-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); transform: translateY(-5px); }
+    .contact-section { background: #f8f9fa; padding: 60px 0; }
+    footer { background: #1a252f; color: #fff; padding: 20px 0; text-align: center; font-size: 14px; }
+    .whatsapp-btn { background: #25d366; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <!-- ВЕРХНЯЯ ПАНЕЛЬ С КОНТАКТАМИ -->
+  <div class="header-top">
+    <div class="container d-flex justify-content-between flex-wrap">
+      <div>📍 г.Бишкек, ул. Токтоналиева 86 | ✉️ info@mysite.kg</div>
+      <div>📞 Ежедневно с 9:00 до 18:00</div>
+    </div>
+  </div>
+
+  <!-- МЕНЮ НАВИГАЦИИ -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">НАШ_БРЕНД</a>
+      <div class="ms-auto">
+        <!-- ЗАМЕНИТЕ НОМЕР ТУТ (в двух местах: в href без плюса, в тексте как обычно) -->
+        <a href="tel:+996709999949" class="fw-bold text-dark text-decoration-none me-3">+996 (709) 999-949</a>
+        <a href="#callback" class="btn btn-orange btn-sm">Оставить заявку</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ГЛАВНЫЙ БАННЕР -->
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3">Установка систем безопасности в Бишкеке</h1>
+      <p class="lead mb-4">Монтаж видеонаблюдения, пожарной сигнализации и СКУД с гарантией качества</p>
+      <a href="#callback" class="btn btn-orange btn-lg">Узнать стоимость</a>
+    </div>
+  </section>
+
+  <!-- БЛОК УСЛУГ -->
+  <section class="container my-5">
+    <h2 class="text-center fw-bold mb-5">Наши услуги</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="service-card">
+          <h3>📹 Видеонаблюдение</h3>
+          <p>Монтаж камер любой сложности для offices, складов и домов.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-card">
+          <h3>🔥 Пожарная безопасность</h3>
+          <p>Проектирование и установка надежных систем сигнализации.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-card">
+          <h3>🔑 СКУД</h3>
+          <p>Системы контроля доступа, турникеты, учет рабочего времени.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФОРМА ОБРАТНОЙ СВЯЗИ И КОНТАКТЫ -->
+  <section id="callback" class="contact-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <h2 class="fw-bold mb-4">Заявка на бесплатный выезд специалиста</h2>
+          
+          <!-- Важная форма! Связана с вашей личной Google Таблицей -->
+          <form id="leadForm">
+            <div class="mb-3">
+              <input type="text" name="username" class="form-control" placeholder="Ваше имя" required>
+            </div>
+            <div class="mb-3">
+              <input type="tel" name="userphone" class="form-control" placeholder="Номер телефона" required>
+            </div>
+            <button type="submit" class="btn btn-orange w-100">Перезвоните мне</button>
+          </form>
+          <div id="formStatus" class="mt-3 text-success fw-bold" style="display:none;">Спасибо! Заявка принята.</div>
+        </div>
+        
+        <div class="col-md-6 ps-md-5">
+          <h2 class="fw-bold mb-4">Наши контакты</h2>
+          <p><strong>Адрес:</strong> г.Бишкек, ул.Токтоналиева 86</p>
+          <p><strong>Email:</strong> info@mysite.kg</p>
+          <!-- ЗАМЕНИТЕ НОМЕР НА СВОЙ ДЛЯ WHATSAPP (только цифры без плюса) -->
+          <p class="mt-4">
+            <a href="https://wa.me" target="_blank" class="whatsapp-btn">Написать в WhatsApp</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОДВАЛ -->
+  <footer>
+    <div class="container">
+      <p>© 2026 НАШ_БРЕНД. Все права защищены. Сайт носит информационный характер.</p>
+    </div>
+  </footer>
+
+  <!-- Скрипт для обработки формы -->
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      const status = document.getElementById('formStatus');
+      
+      // Сюда вставлена ваша рабочая ссылка Версии 2 из Google Apps Script
+      const webAppUrl = 'https://script.google.com/macros/s/AKfycbzFl1Jdhm4EpzpKs0RozkbOq9x-Atyh_iKfRk4PNEs1S8syrv4e2U056bfNQ5VjVJuQ/exec';
+      
+      fetch(webAppUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new FormData(form)
+      }).then(() => {
+        status.style.display = 'block';
+        form.reset();
+      }).catch(err => alert('Ошибка отправки: ' + err.message));
+    });
+  </script>
+</body>
+</html>
